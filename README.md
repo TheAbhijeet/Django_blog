@@ -6,10 +6,8 @@ A blog application made on Django 2.
 
 **Release 1.0** -Blog application with Django 2.X that allows users to create, edit, and delete posts. To learn more read https://djangocentral.com/building-a-blog-application-with-django
 
-<<<<<<< HEAD
-Release 2.0 - Comments system added. To learn more read - https://djangocentral.com/creating-comments-system-with-django
-=======
 **Release 2.0** - Comments system added. To learn more read - https://djangocentral.com/creating-comments-system-with-django/
->>>>>>> aa40362881aa96b0324e76437c8aaad548499501
 
 ![Peek 2019-10-15 11-41](https://user-images.githubusercontent.com/38559396/66840502-c9fcfd80-ef85-11e9-827c-51fa4064a231.gif)
+
+**Release 2.1** - Pagination added, To learn more read - https://djangocentral.com/adding-pagination-with-django/
