@@ -10,7 +10,10 @@ A blog application made on Django 2.
 
 ![Peek 2019-10-15 11-41](https://user-images.githubusercontent.com/38559396/66840502-c9fcfd80-ef85-11e9-827c-51fa4064a231.gif)
 
-**Release 2.1** - Pagination added, To learn more read - https://djangocentral.com/adding-pagination-with-django/
+**Release 2.1** - Pagination added, To learn more read - https://djangocentral.com/adding-pagination-with-django/ <br/><br/>
+Static assets management added, To learn more read - https://djangocentral.com/static-assets-in-django/
+
 # Contributors
+
 Please star the repo and feel free to make pull requests. <br/><br/>
 <a href='https://ko-fi.com/J3J617AIN' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
