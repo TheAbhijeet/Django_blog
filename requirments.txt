@@ -1,0 +1,6 @@
+Django==2.2.8
+django-crispy-forms==1.8.1
+django-summernote==0.8.11.4
+pkg-resources==0.0.0
+pytz==2019.3
+sqlparse==0.3.0
