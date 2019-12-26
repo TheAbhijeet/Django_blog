@@ -11,7 +11,9 @@ A blog application made on Django 2.
 ![Peek 2019-10-15 11-41](https://user-images.githubusercontent.com/38559396/66840502-c9fcfd80-ef85-11e9-827c-51fa4064a231.gif)
 
 **Release 2.1** - Pagination added, To learn more read - https://djangocentral.com/adding-pagination-with-django/ <br/><br/>
-Static assets management added, To learn more read - https://djangocentral.com/static-assets-in-django/
+Static assets management added, To learn more read - https://djangocentral.com/static-assets-in-django/ <br/><br/>
+
+Wysiwyg editor added, To learn more read - https://djangocentral.com/integrating-summernote-in-django/
 
 # Contributors
 
