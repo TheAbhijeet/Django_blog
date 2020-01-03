@@ -17,7 +17,7 @@ Wysiwyg editor added, To learn more read - https://djangocentral.com/integrating
 
 Sitemap added, To learn more read - https://djangocentral.com/creating-sitemaps-in-django/
 
-
+Feeds added, To learn more read - https://djangocentral.com/creating-feeds-with-django/
 
 # Contributors
 
