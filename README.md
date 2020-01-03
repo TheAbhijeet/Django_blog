@@ -13,7 +13,11 @@ A blog application made on Django 2.
 **Release 2.1** - Pagination added, To learn more read - https://djangocentral.com/adding-pagination-with-django/ <br/><br/>
 Static assets management added, To learn more read - https://djangocentral.com/static-assets-in-django/ <br/><br/>
 
-Wysiwyg editor added, To learn more read - https://djangocentral.com/integrating-summernote-in-django/
+Wysiwyg editor added, To learn more read - https://djangocentral.com/integrating-summernote-in-django/ <br/><br/>
+
+Sitemap added, To learn more read - https://djangocentral.com/creating-sitemaps-in-django/
+
+
 
 # Contributors
 
