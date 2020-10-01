@@ -25,12 +25,12 @@
     <!-- Blog Entries Column -->
     <div class="col-md-8 mt-3 left">
       {% for post in post_list %}
-      <div class="card mb-4">
+      <div class="card card-1 mb-4">
         <div class="card-body">
-          <h2 class="card-title">{{ post.title }}</h2>
+          <h2 class="card-title card__title">{{ post.title }}</h2>
           <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}  </p>
 
-          <p class="card-text">{{post.content|slice:":200" }}</p>
+          <p class="card-text">{{post.content|truncatewords:80|safe }}</p>
           <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
         </div>
 
