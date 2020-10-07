@@ -2,6 +2,25 @@
 
 A blog application made on Django.
 
+## To run this project follow these steps:
+```javascript
+git clone https://github.com/TheAbhijeet/Django_blog.git
+```
+```python
+pip install -r requirements.txt
+```
+```python
+python manage.py migrate
+```
+```python
+python manage.py runserver
+```
+
+### To add blog posts first create superuser account and write from django admin panel(http://127.0.0.1:8000/admin)
+```python
+python manage.py createsuperuser
+```
+
 ![ezgif com-video-to-gif](https://user-images.githubusercontent.com/38559396/55287491-12c4de80-53c7-11e9-8c6a-3f02b79ba9ca.gif)
 
 **Release 1.0** -Blog application made with Django, To learn more read https://djangocentral.com/building-a-blog-application-with-django

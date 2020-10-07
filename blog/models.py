@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from taggit.managers import TaggableManager
 
 STATUS = ((0, "Draft"), (1, "Publish"))
 
@@ -13,6 +13,7 @@ class Post(models.Model):
     )
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
+    tags = TaggableManager()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 

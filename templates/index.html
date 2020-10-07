@@ -29,8 +29,9 @@
         <div class="card-body">
           <h2 class="card-title">{{ post.title }}</h2>
           <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}  </p>
+          <p class="tags"><b>Tags: {{ post.tags.all|join:", " }}</b></p>
 
-          <p class="card-text">{{post.content|slice:":200" }}</p>
+          <p class="card-text">{{post.content|safe|truncatewords:200 }}</p>
           <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
         </div>
 
