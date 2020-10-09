@@ -1,7 +1,8 @@
 from django.views import generic
-from .models import Post
+from .models import Post,contactmessage
 from .forms import CommentForm
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect
+
 
 
 class PostList(generic.ListView):
@@ -45,3 +46,12 @@ def post_detail(request, slug):
         },
     )
 
+def contact(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        message = request.POST['message']
+        newmage = contactmessage(email=email,message=message)
+        newmage.save()
+        return redirect("/")
+    context = {}
+    return render(request,'contact.html',context)
