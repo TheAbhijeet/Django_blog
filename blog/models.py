@@ -1,5 +1,8 @@
+import readtime
+
 from django.db import models
 from django.contrib.auth.models import User
+from taggit.managers import TaggableManager
 
 
 STATUS = ((0, "Draft"), (1, "Publish"))
@@ -15,6 +18,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    tags = TaggableManager()
 
     class Meta:
         ordering = ["-created_on"]
@@ -26,6 +30,12 @@ class Post(models.Model):
         from django.urls import reverse
 
         return reverse("post_detail", kwargs={"slug": str(self.slug)})
+
+    def get_read_time(self):
+        ''' Returns the read time of the WYSIWYG content field. '''
+        string = str(self.content)
+        result = readtime.of_html(string, wpm=200)
+        return result
 
 
 class Comment(models.Model):

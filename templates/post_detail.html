@@ -6,7 +6,12 @@
     <div class="col-md-8 card mb-4  mt-3 left  top">
       <div class="card-body">
         <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
-        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+        <p class=" text-muted">{{ post.author }} | {{ post.created_on }} | {{ post.get_read_time }}</p>
+        <p>
+          {% for tag in post.tags.all %}
+          <span class="badge badge-primary">{{ tag }}</span>
+          {% endfor %}
+        </p>
         <p class="card-text ">{{ post.content | safe }}</p>
       </div>
     </div>

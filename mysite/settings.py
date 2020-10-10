@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog',
     'crispy_forms',
     'django_summernote',
+    'taggit',
 ]
 
 INSTALLED_APPS += ( 'django.contrib.sitemaps',)
@@ -134,7 +135,7 @@ STATIC_ROOT  = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
-
+TAGGIT_CASE_INSENSITIVE = True
 
 
 
