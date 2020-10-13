@@ -42,3 +42,11 @@ class Comment(models.Model):
 
     def __str__(self):
         return "Comment {} by {}".format(self.body, self.name)
+
+
+class contactmessage(models.Model):
+    email = models.EmailField(max_length=254)
+    message = models.TextField(max_length=5550)
+    
+    def __str__(self):
+        return self.email

@@ -25,3 +25,14 @@ body {
 .card {
     box-shadow: 0 16px 48px #E3E7EB;
 }
+
+
+
+/* contact page */
+.contact-message{
+    margin-top: 30px;
+    align-items: center;
+}
+.message-form{
+    margin: 0 auto;
+}
