@@ -1,7 +1,8 @@
+from django.shortcuts import get_object_or_404, render
 from django.views import generic
-from .models import Post
+
 from .forms import CommentForm
-from django.shortcuts import render, get_object_or_404
+from .models import Post
 
 
 class PostList(generic.ListView):
@@ -44,4 +45,3 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
-

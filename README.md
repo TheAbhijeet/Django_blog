@@ -21,7 +21,7 @@ Feeds added, To learn more read - https://djangocentral.com/creating-feeds-with-
 
 Using Environment Variables In Django, To learn more read - https://djangocentral.com/environment-variables-in-django/
 
-# Deployment 
+# Deployment
 
 How To Deploy Django App with Nginx, Gunicorn, PostgreSQL and Let’s Encrypt SSL on Ubuntu - https://djangocentral.com/deploy-django-with-nginx-gunicorn-postgresql-and-lets-encrypt-ssl-on-ubuntu/
 

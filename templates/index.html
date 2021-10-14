@@ -3,58 +3,58 @@
 {% block content %}
 
 
-<header class="masthead">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class=" col-md-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
-          <p class="text-light">We Love Django As much as you do..! &nbsp
-          </p>
+    <header class="masthead">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class=" col-md-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
+                        <p class="text-light">We Love Django As much as you do..! &nbsp
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  </div>
-</header>
+    </header>
 
-<div class="container">
-  <div class="row">
+    <div class="container">
+        <div class="row">
 
-    <!-- Blog Entries Column -->
-    <div class="col-md-8 mt-3 left">
-      {% for post in post_list %}
-      <div class="card mb-4">
-        <div class="card-body">
-          <h2 class="card-title">{{ post.title }}</h2>
-          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}  </p>
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 mt-3 left">
+                {% for post in post_list %}
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}  </p>
 
-          <p class="card-text">{{post.content|safe|slice:":200" }}</p>
-          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                            <p class="card-text">{{post.content|safe|slice:":200" }}</p>
+                            <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+            {% block sidebar %}
+                {% include 'sidebar.html' %}
+            {% endblock sidebar %}
         </div>
-
-      </div>
-      {% endfor %}
-
     </div>
-    {% block sidebar %}
-    {% include 'sidebar.html' %}
-    {% endblock sidebar %}
-  </div>
-</div>
-{% if is_paginated %}
-<nav aria-label="Page navigation conatiner"></nav>
-<ul class="pagination justify-content-center">
-  {% if page_obj.has_previous %}
-  <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-  {% endif %}
-  {% if page_obj.has_next %}
-  <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    {% if is_paginated %}
+        <nav aria-label="Page navigation conatiner"></nav>
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
-  {% endif %}
-</ul>
-</nav>
-</div>
-{% endif %}
+            {% endif %}
+        </ul>
+        </nav>
+        </div>
+    {% endif %}
 {%endblock%}
