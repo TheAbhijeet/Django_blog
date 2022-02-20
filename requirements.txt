@@ -1,6 +1,6 @@
 asgiref==3.4.1
 autopep8==1.5.7
-Django==3.2.8
+Django==3.2.12
 django-crispy-forms==1.13.0
 django-debug-toolbar==3.2.2
 django-summernote==0.8.11.6
