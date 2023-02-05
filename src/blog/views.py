@@ -21,7 +21,8 @@ class PostTag(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         print(args, kwargs)
-        return redirect("__debug__/")
+        post_list = Post.objects.filter(tag=kwargs['tag'])
+        return render(request, self.template_name, context={'post_list': post_list})
 
 
 def post_detail(request, slug):
