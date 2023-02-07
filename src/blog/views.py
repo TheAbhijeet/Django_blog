@@ -17,11 +17,15 @@ class PostList(generic.ListView):
 
 class PostTag(generic.ListView):
     template_name = "index.html"
+    paginate_by = 3
 
-    def get(self, request, *args, **kwargs):
-        posts = Post.objects.filter(tag=kwargs['tag'])
-
-        return render(request, self.template_name, {"post_list": posts})
+    def get_queryset(self):
+        posts = Post.objects.filter(tag=self.kwargs['tag'])
+        return posts
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['tag'] = self.kwargs['tag']
+        return context
 
 
 def post_detail(request, slug):
