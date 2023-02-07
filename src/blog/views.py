@@ -20,6 +20,7 @@ class PostTag(generic.ListView):
 
     def get(self, request, *args, **kwargs):
         posts = Post.objects.filter(tag=kwargs['tag'])
+        
         return render(request, self.template_name, {"post_list": posts})
 
 
@@ -52,6 +53,7 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
 
 class AllPosts(generic.ListView):
     template_name = "index.html"
