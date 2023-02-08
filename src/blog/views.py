@@ -31,7 +31,6 @@ class PostTag(generic.ListView):
 def post_detail(request, slug):
     template_name = "post_detail.html"
     post = get_object_or_404(Post, slug=slug)
-    print("post objects-->", post)
     comments = post.comments.filter(active=True).order_by("-created_on")
     new_comment = None
     # Comment posted
