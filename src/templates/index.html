@@ -12,10 +12,10 @@
 
                         {% if "/posts/"|add:tag|add:"/" in request.path %}
                         
-                        <h3>Tag: {{tag}}</h3>
+                        <h3 class=" site-heading my-4 mt-3 text-white">Tag: {{tag}}</h3>
                         
                         {% elif "/posts/" in request.path %}
-                            <h1>all posts</h1>
+                            <h3 class=" site-heading my-4 mt-3 text-white">all posts</h3>
                         
                         {% else %}
                         <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
@@ -35,9 +35,9 @@
                 {% for post in post_list %}
                     <div class="card mb-4">
                         <div class="card-body">
+                            <a href="{% url 'post_tag' post.tag %}"  class="btn btn-light">{{ post.tag }}</a>
                             <h2 class="card-title">{{ post.title }}</h2>
                             <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}  </p>
-
                             <p class="card-text">{{post.content|safe|slice:":200" }}</p>
                             <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                         </div>

@@ -11,5 +11,5 @@ urlpatterns = [
     path("posts/", views.AllPosts.as_view(), name="articles"),
     # path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path("<slug:slug>/", views.post_detail, name="post_detail"),
-    path("posts/<str:tag>/", PostTag.as_view())
+    path("posts/<str:tag>/", PostTag.as_view(), name="post_tag")
 ]

@@ -9,8 +9,8 @@
                     <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
                     <p class="card-text ">{{ post.content | safe }}</p>
                     <hr>
-                    <h2>Tag</h2>
-                    <p>{{post.tag}}</p>
+                    <h3>Tag</h3>
+                    <a href="{% url 'post_tag' post.tag %}"  class="btn btn-light">{{ post.tag }}</a>
                 </div>
             </div>
             {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
