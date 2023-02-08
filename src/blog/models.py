@@ -14,6 +14,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    tag = models.CharField(unique=False, max_length=50)
 
     class Meta:
         ordering = ["-created_on"]

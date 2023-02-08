@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
 
 from .forms import CommentForm
@@ -15,6 +15,18 @@ class PostList(generic.ListView):
 #     model = Post
 #     template_name = 'post_detail.html'
 
+class PostTag(generic.ListView):
+    template_name = "index.html"
+    paginate_by = 3
+
+    def get_queryset(self):
+        posts = Post.objects.filter(tag=self.kwargs['tag'])
+        return posts
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['tag'] = self.kwargs['tag']
+        return context
+
 
 def post_detail(request, slug):
     template_name = "post_detail.html"
@@ -25,7 +37,6 @@ def post_detail(request, slug):
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-
             # Create Comment object but don't save to database yet
             new_comment = comment_form.save(commit=False)
             # Assign the current post to the comment
@@ -45,3 +56,9 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
+
+class AllPosts(generic.ListView):
+    template_name = "index.html"
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    paginate_by = 3
