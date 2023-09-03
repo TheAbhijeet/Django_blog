@@ -3,6 +3,8 @@ from django.urls import include, path
 from . import views
 from .feeds import AtomSiteNewsFeed, LatestPostsFeed
 
+app_name = 'blog'
+
 urlpatterns = [
     path("feed/rss", LatestPostsFeed(), name="post_feed"),
     path("feed/atom", AtomSiteNewsFeed()),

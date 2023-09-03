@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "blog",
     "crispy_forms",
     "django_summernote",
+    'users',
 ]
 
 
@@ -158,3 +159,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 X_FRAME_OPTIONS = "SAMEORIGIN"
+
+AUTH_USER_MODEL = "users.CustomUser"
+
+LOGIN_REDIRECT_URL = "blog:home"
+LOGOUT_REDIRECT_URL = "blog:home"
