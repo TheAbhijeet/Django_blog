@@ -21,7 +21,6 @@ class CustomUserCreationForm(UserCreationForm):
     
     # Define individual form fields with placeholder attributes
     email = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder': "Email"}))
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder': "First name"}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control','placeholder': "Last name"}))
 
 # Custom form for editing user details, inheriting from UserChangeForm

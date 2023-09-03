@@ -34,11 +34,21 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
 
+
                         
                         {% if user.is_authenticated %}
                         <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" >User: {{ user.first_name }}</a>
+                        </li>
+                        <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'users:logout' %}">Logout</a>
                         </li>
+                        {% if user.is_superuser %}
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="admin">AdminPanel</a>
+                        </li>
+                    {% endif %}
+                        
                         {% else %}
                                 <li class="nav-item text-black">
                                     <a class="nav-link text-black font-weight-bold" href="{% url 'users:signup' %}" onclick="replaceURL('/users/login/'); return false;">Login</a>

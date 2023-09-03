@@ -1,8 +1,10 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 
 from .forms import CommentForm
 from .models import Post
+
 
 
 class PostList(generic.ListView):
@@ -21,17 +23,26 @@ def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True).order_by("-created_on")
     new_comment = None
-    # Comment posted
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
 
-            # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
-            new_comment.post = post
-            # Save the comment to the database
-            new_comment.save()
+        if comment_form.is_valid():
+            user = request.user  # Get the logged-in user
+
+            # Check if the provided first_name and email match the logged-in user's data
+            if (
+                user.first_name == comment_form.cleaned_data['name']
+                and user.email == comment_form.cleaned_data['email']
+            ):
+                new_comment = 'success'  # Comment successfully created
+                comment = comment_form.save(commit=False)
+                comment.post = post
+                comment.save()
+            else:
+                # Provided first_name or email do not match the logged-in user's data
+                new_comment = 'mismatch'
+
     else:
         comment_form = CommentForm()
 
@@ -45,3 +56,4 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+

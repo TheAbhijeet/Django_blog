@@ -35,22 +35,30 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-md-8 card mb-4  mt-3 ">
+            {% if user.is_authenticated %}
+            <div class="col-md-8 card mb-4 mt-3">
                 <div class="card-body">
-                    {% if new_comment %}
-                        <div class="alert alert-success" role="alert">
-                            Your comment is awaiting moderation
-                        </div>
-                    {% else %}
-                        <h3>Leave a comment</h3>
-                        <form method="post" style="margin-top: 1.3em;">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
-                        </form>
+                    {% if new_comment == 'success' %}
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting moderation
+                    </div>
+                    {% elif new_comment == 'mismatch' %}
+                    <div class="alert alert-danger" role="alert">
+                        Your username or email is wrong, please try again.
+                    </div>
                     {% endif %}
+                    <h3>Leave a comment</h3>
+                    <form method="post" style="margin-top: 1.3em;">
+                        {{ comment_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </form>
                 </div>
             </div>
+            
+            
+            
+            {% endif %}
         </div>
     </div>
 
