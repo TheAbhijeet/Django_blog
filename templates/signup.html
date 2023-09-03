@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="blank" id="first"></div>
+  <div class="container">
+    <center>
+      <h2>Sign Up</h2>
+    </center>
+
+    <form method="post">
+      <hr>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <hr>
+      <center><button type="submit" class="btn btn-primary">Sign Up</button>
+      </center>
+      <p>Old User?<a id="signin" href="{% url 'users:signup' %}" onclick="replaceURL('/users/login/'); return false;"> Sign In / Login</a></p>
+    </form>
+  </div>
+  <div class="blank"></div>
+  <div class="blank"></div>
+  {%endblock%}
