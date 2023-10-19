@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
                     <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
-                    <p class="card-text ">{{ post.content | safe }}</p>
+                    <p class="card-text ">{{ post.content | safe | linebreaks }}</p>
                 </div>
             </div>
             {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
