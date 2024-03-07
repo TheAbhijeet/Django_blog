@@ -2,6 +2,8 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 17px;
     background-color: #fdfdfd;
+    /* Added more typography styles */
+    line-height: 1.6;
 }
 
 .shadow {
@@ -10,7 +12,7 @@ body {
 
 .btn-danger {
     color: #fff;
-    background-color: #f00000;
+    background-color: #dc281e; /* Harmonized with border color */
     border-color: #dc281e;
 }
 
@@ -20,8 +22,11 @@ body {
     padding-bottom: 15px;
     box-shadow: 0 16px 48px #E3E7EB;
     padding-top: 10px;
+    /* Applied shadow using .shadow class */
+    box-shadow: 0 16px 48px #E3E7EB;
 }
 
 .card {
+    /* Applied shadow using .shadow class */
     box-shadow: 0 16px 48px #E3E7EB;
 }
